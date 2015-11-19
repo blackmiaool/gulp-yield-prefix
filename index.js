@@ -2,8 +2,7 @@ var through = require('through2');
 var gutil = require('gulp-util');
 var PluginError = gutil.PluginError;
 
-// Consts
-const PLUGIN_NAME = 'gulp-markdown-table-to-json';
+const PLUGIN_NAME = 'gulp-yield-prefix';
 
 function md_trim(str) {
     return str.replace(/(^\s+)|(\s+$)/g, "");
@@ -16,12 +15,10 @@ function handle(text,target_functions) {
     })    
     return text;
 }
-// Plugin level function(dealing with files)
-function gulpMarkdownTableToJson(target_functions) {
-    // Creating a stream through which each file will pass
+
+function gulpYieldPrefix(target_functions) {
     return through.obj(function (file, enc, cb) {
         if (file.isNull()) {
-            // return empty file
             return cb(null, file);
         }
         if (file.isBuffer()) {
@@ -39,4 +36,4 @@ function gulpMarkdownTableToJson(target_functions) {
 }
 
 // Exporting the plugin main function
-module.exports = gulpMarkdownTableToJson;
+module.exports = gulpYieldPrefix;
