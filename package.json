@@ -1,6 +1,6 @@
 {
   "name": "gulp-yield-prefix",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "A yield-prefix  plugin for gulp 3.",
   "main": "index.js",
   "scripts": {

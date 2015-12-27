@@ -10,7 +10,7 @@ function md_trim(str) {
 
 function handle(text,target_functions) {
     target_functions.forEach(function(v,i){
-        var reg=eval("/"+"\\s"+v+"\\s*\\("+"/g");
+        var reg=eval("/"+"\\b"+v+"\\s*\\("+"/g");
         text=text.replace(reg,"yield "+v+"(");
     })    
     return text;
